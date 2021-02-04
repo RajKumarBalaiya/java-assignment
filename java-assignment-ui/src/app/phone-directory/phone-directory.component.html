@@ -1,0 +1,15 @@
+
+<div class="container">
+        <h2>Phone Directory</h2>
+        <a style='margin-right:16px' routerLink="/phone-directory-list" class="btn btn-primary btn-md"><span
+          class="glyphicon glyphicon-home"></span>
+        Show Phone Directory Name List</a> 
+        <div class="card">
+          <div class="input-wrap">        
+            <input  (keyup)="onChange($event)" type="search"  placeholder="search the name">
+          </div>
+          <div *ngFor="let matchWord of matchingWords" class="city" >
+            {{matchWord}}
+          </div>
+        </div>
+      </div>

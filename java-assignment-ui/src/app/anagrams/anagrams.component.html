@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Find Group Anagrams</h2>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="name">Anagrams Words</label>
+      <input (keyup)="onChange($event)" type="text" class="form-control" name="AnagramsList"
+        placeholder="Enter the words separated by commas eg: CAT,DOG,TAC,MAD,DAM,AMD,GOD,SET">
+     <span *ngIf=isTextValid><li class="rq">*Enter alphabets only.</li></span>  
+     <span *ngIf=isTextEmpty><li class="rq">*Please Enter the text.</li></span>  
+   
+    </div>
+    <div>
+      <button data-toggle="modal" id="openModalButton" class="btn btn-primary" type="submit" data-target="#openModal"
+        (click)="openModal()">Submit</button>
+    </div>
+  </div>
+</div>
+<div  *ngIf=isSubmit id="openModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="openModalLabel"
+  style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="popup">
+        <h3 style='text-align: center' class="heading-3">Results:</h3>
+        <div class="card-body">      
+           <h3>{{results}}</h3> 
+        </div>
+        <div class="mt-20">
+          <button  style='margin-left:423px' type="button" data-dismiss="modal" class="btn btn-outline-danger">Cancel</button>
+        </div>
